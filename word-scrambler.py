@@ -55,6 +55,7 @@ while True:
         message = input("Enter a message for encryption: ")
         enc_mes, key = encryption(message)
         time.sleep(0.4)
+        
         print(f"Your encrypted message: {enc_mes}")
         time.sleep(0.4)
         
@@ -65,10 +66,12 @@ while True:
         
         if have_key.lower() == "y":
             
-            key = input("Enter your key: ")
+            key = int(input("Enter your key: "))
             time.sleep(0.4)
+            
             enc_mes = input("Enter your message: ")
             dec_mes = decryption(enc_mes, key)
+            
             time.sleep(0.4)
             print(f"Your decrypted message: {dec_mes}")
             time.sleep(0.4)
@@ -79,6 +82,7 @@ while True:
                 
                 message = input("Enter a message for decryption: ")
                 dec_mes = decryption(enc_mes, key)
+                
                 time.sleep(0.4)
                 print(f"Your decrypted message: {dec_mes}")
                 time.sleep(0.4)
