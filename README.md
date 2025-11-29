@@ -5,4 +5,4 @@ A simple word scrambler in Python.
 Clone the repo and run it in terminal.
 
 # What It Does
-It scrambles the sentence its given, can unscramble sentences if user have an encryption key. 
+It scrambles the sentences its given, can unscramble sentences if user have an encryption key. 
