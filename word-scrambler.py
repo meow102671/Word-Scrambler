@@ -1,5 +1,6 @@
 from sympy import gcd
 from random import randint
+import time
 
 def find_valid_k(n):
     """Finds a k that is coprime with n."""
@@ -45,22 +46,56 @@ def decryption(encrypted_message, k):
 
 
 while True:
+    
     choice = input("Do you want to encrypt or decrypt a message, press (E) for encrypt (D) for decrypt, press (Q) for quit the program\n")
+    time.sleep(0.4)
+    
     if choice.lower() == "e":
+        
         message = input("Enter a message for encryption: ")
         enc_mes, key = encryption(message)
+        time.sleep(0.4)
         print(f"Your encrypted message: {enc_mes}")
-    elif choice.lower() == "d":
-        try:
-            message = input("Enter a message for decryption: ")
-            dec_mes = decryption(enc_mes, key)
-            print(f"Your decrypted message: {dec_mes}")
-        except NameError:
-            print("No message to decrypt!!")
+        time.sleep(0.4)
         
+    elif choice.lower() == "d":
+        
+        have_key = input("Do you have an encryption key? (Y)es (N)o \n")
+        time.sleep(0.4)
+        
+        if have_key.lower() == "y":
+            
+            key = input("Enter your key: ")
+            time.sleep(0.4)
+            enc_mes = input("Enter your message: ")
+            dec_mes = decryption(enc_mes, key)
+            time.sleep(0.4)
+            print(f"Your decrypted message: {dec_mes}")
+            time.sleep(0.4)
+            
+        else:
+            
+            try:
+                
+                message = input("Enter a message for decryption: ")
+                dec_mes = decryption(enc_mes, key)
+                time.sleep(0.4)
+                print(f"Your decrypted message: {dec_mes}")
+                time.sleep(0.4)
+                
+            except NameError:
+            
+                print("No message to decrypt!!")
+                time.sleep(0.4)
+                
     elif choice.lower() == "q":
+        
+        print(f"Your encryption key is: {key}")
         quit()
+        
     else:
+        
         print("INVALID CHOICE")
+        time.sleep(0.4)
 
 
